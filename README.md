@@ -1,2 +1,2 @@
-# library-control
+# Library Control
 Library control for lending books.
