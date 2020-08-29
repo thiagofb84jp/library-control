@@ -37,6 +37,9 @@ public class UserLibraryDTO {
 
 	@NotBlank
 	private AddressDTO address;
+	
+	@NotBlank
+	private ContactDTO contact;
 
 	public UserLibraryDTO(UserLibrary userLibrary) {
 		this.setIdentifier(userLibrary.getIdentifier());
@@ -45,5 +48,6 @@ public class UserLibraryDTO {
 		this.setDateBirth(userLibrary.getDateBirth());
 		this.setStatus(userLibrary.getStatus());
 		this.setAddress(new AddressDTO(userLibrary.getAddress()));
+		this.setContact(new ContactDTO(userLibrary.getContact()));
 	}
 }

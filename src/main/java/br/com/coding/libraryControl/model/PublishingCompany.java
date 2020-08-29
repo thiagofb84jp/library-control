@@ -1,35 +1,31 @@
 package br.com.coding.libraryControl.model;
 
-import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.Size;
 
-import br.com.coding.libraryControl.enumeration.PersonStatus;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "TB_USER_LIBRARY", uniqueConstraints = {@UniqueConstraint(columnNames = "numberDocument"),})
+@Table(name = "TB_PUBLISHING_COMPANY")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserLibrary {
-
+@Builder(builderMethodName = "builder")
+public class PublishingCompany {
+	
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition = "BINARY(16)")
@@ -37,21 +33,18 @@ public class UserLibrary {
 
 	@Column(nullable = false)
 	private String name;
-
-	@Column(unique = true)
-	@Size(min = 11, max = 14)
-	private String numberDocument;
-
-	@Column(nullable = false)
-	private LocalDate dateBirth;
 	
-	@Enumerated(EnumType.STRING)
+	private String owner;
+	
 	@Column(nullable = false)
-	private PersonStatus status;
+	private String yearFoundation;
+	
+	@Column(nullable = false)
+	private String nationality;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_identifier", referencedColumnName = "identifier")
-	private Address address;
+	private Address adress;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "contact_identifier", referencedColumnName = "identifier")	
