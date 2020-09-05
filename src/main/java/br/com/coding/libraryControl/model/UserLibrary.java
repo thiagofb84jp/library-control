@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Size;
 
-import br.com.coding.libraryControl.enumeration.PersonStatus;
+import br.com.coding.libraryControl.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -47,7 +47,7 @@ public class UserLibrary {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
-	private PersonStatus status;
+	private Status status;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_identifier", referencedColumnName = "identifier")

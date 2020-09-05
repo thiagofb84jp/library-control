@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.coding.libraryControl.enumeration.PersonStatus;
+import br.com.coding.libraryControl.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -32,7 +32,7 @@ public class UpdateUserLibraryDTO {
 	private LocalDate dateBirth;
 
 	@NotBlank
-	private PersonStatus status;
+	private Status status;
 
 	@NotBlank
 	private AddressDTO address;

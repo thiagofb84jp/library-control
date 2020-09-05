@@ -5,12 +5,15 @@ import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.coding.libraryControl.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,14 +40,17 @@ public class PublishingCompany {
 	private String owner;
 	
 	@Column(nullable = false)
-	private String yearFoundation;
+	private int yearFoundation;
 	
 	@Column(nullable = false)
 	private String nationality;
 	
+	@Enumerated(EnumType.STRING)
+	private Status status;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_identifier", referencedColumnName = "identifier")
-	private Address adress;
+	private Address address;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "contact_identifier", referencedColumnName = "identifier")	

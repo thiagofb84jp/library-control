@@ -1,30 +1,28 @@
 package br.com.coding.libraryControl.dto;
 
-import java.time.LocalDate;
-
 import javax.validation.constraints.NotBlank;
 
-import br.com.coding.libraryControl.enumeration.Status;
 import lombok.Getter;
 
 @Getter
-public class CreateUserLibraryDTO {
-
+public class CreatePublishingCompanyDTO {
+	
 	@NotBlank
 	private String name;
-
+	
 	@NotBlank
-	private String numberDocument;
-
+	private String owner;
+	
 	@NotBlank
-	private LocalDate dateBirth;
-
+	private int yearFoundation;
+	
 	@NotBlank
-	private Status status;
+	private String nationality;
 	
 	@NotBlank
 	private AddressDTO address;
 	
 	@NotBlank
 	private ContactDTO contact;
+
 }

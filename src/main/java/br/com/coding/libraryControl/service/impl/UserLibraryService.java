@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import br.com.coding.libraryControl.dto.CreateUserLibraryDTO;
 import br.com.coding.libraryControl.dto.UpdateUserLibraryDTO;
 import br.com.coding.libraryControl.dto.UserLibraryDTO;
-import br.com.coding.libraryControl.enumeration.PersonStatus;
+import br.com.coding.libraryControl.enumeration.Status;
 import br.com.coding.libraryControl.model.Address;
 import br.com.coding.libraryControl.model.Contact;
 import br.com.coding.libraryControl.model.UserLibrary;
@@ -34,7 +34,7 @@ public class UserLibraryService implements IUserLibraryService{
 		userLibrary.setName(createUserLibrary.getName());
 		userLibrary.setNumberDocument(createUserLibrary.getNumberDocument());
 		userLibrary.setDateBirth(createUserLibrary.getDateBirth());
-		userLibrary.setStatus(PersonStatus.ACTIVE);
+		userLibrary.setStatus(Status.ACTIVE);
 		
 		Address address = new Address();
 		address.setPublicNameStreet(createUserLibrary.getAddress().getPublicNameStreet());

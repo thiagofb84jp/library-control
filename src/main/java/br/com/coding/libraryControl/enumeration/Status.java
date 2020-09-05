@@ -1,6 +1,6 @@
 package br.com.coding.libraryControl.enumeration;
 
-public enum PersonStatus {
+public enum Status {
 
 	ACTIVE,
 	INACTIVE
