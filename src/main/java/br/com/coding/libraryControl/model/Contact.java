@@ -1,6 +1,5 @@
 package br.com.coding.libraryControl.model;
 
-import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
